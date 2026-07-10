@@ -315,8 +315,12 @@
       <p style="font-size: 1.2rem; color: var(--text-muted); font-weight: 600; margin-bottom: 12px;">
         From <span style="text-decoration: line-through; color: #ef4444; font-weight: 700; font-size: 1.25rem; margin-right: 4px;">$127</span> for only <span style="color: var(--green); font-size: 1.9rem; font-weight: 900; margin-left: 4px; vertical-align: middle;">$37</span>
       </p>
-      <!-- Insert the Hotmart Widget code below -->
-      <div id="hotmart-funnel-widget-container"></div>
+      <!-- HOTMART - Sales Funnel Widget -->
+      <div id="hotmart-sales-funnel"></div>
+      <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+      <script>
+        checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+      </script>
     </div>
 
     <!-- Hook/Narrative Section -->
