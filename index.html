@@ -60,9 +60,18 @@
         </p>
         <!-- HOTMART - Sales Funnel Widget -->
         <div id="hotmart-sales-funnel"></div>
-        <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
         <script>
-          checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+          (function() {
+            var s = document.createElement('script');
+            s.src = 'https://checkout.hotmart.com/lib/hotmart-checkout-elements.js';
+            s.async = true;
+            s.onload = function() {
+              if (typeof checkoutElements !== 'undefined') {
+                checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel');
+              }
+            };
+            document.head.appendChild(s);
+          })();
         </script>
       </div>
       <p style="font-size: 0.9rem; color: var(--text-muted); font-style: italic; margin-top: 10px;">*Just one click. You won’t need to enter your payment information again.*</p>
